@@ -18,7 +18,7 @@ const Login = () => {
     const handleFunction = async () => {
 
         try {
-            const response = await api.post("/auth/login" , 
+            const response = await api.post("/auth/login",
                 {
                     email,
                     password
@@ -29,36 +29,47 @@ const Login = () => {
             navigate("/dashboard");
 
             console.log(response.data)
-            
+
         } catch (error) {
             console.log(error)
         }
     };
 
-  return (
-    <div>
-        <h1 className=''>Login</h1>
+    return (
+        <div >
+            <h1 style={{ color: 'black', textAlign: 'center' }}>Login</h1>
 
-        <div className='flex '>
-            <input 
-                type="email"
-                placeholder='Enter email'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className='bg'
-            />
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+                <div style={{
+                    border: '2px solid black', height: '8rem', width: '20rem',
+                    textAlign: 'center', padding: '4rem', backgroundColor: 'GrayText'
+                }}>
+                    Email:
+                    <input
+                        type="email"
+                        placeholder='Enter email'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className='bg'
+                    />
 
-        <input 
-            type="password"
-            placeholder='Enter password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-        />
+                    <br /><br />
+
+                    Password:
+                    <input
+                        type="password"
+                        placeholder='Enter password'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+
+                    <br /><br />
+                    <button style={{backgroundColor: 'blueviolet', padding: '5px 10px', color: 'whitesmoke'}} onClick={handleFunction}>Login</button>
+                </div>
+            </div>
+
         </div>
-
-        <button onClick={handleFunction}>Login</button>
-    </div>
-  )
+    )
 }
 
 export default Login
