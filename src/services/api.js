@@ -16,7 +16,7 @@ import axios from "axios";   // Because Axios helps React talk to backend APIs.
 // 📌 Think of it like setting a default backend URL.
 
 const api = axios.create({
-    baseURL: "http://localhost:8080"
+    baseURL: "https://url-shortner-pj51.onrender.com"
 });
 
 

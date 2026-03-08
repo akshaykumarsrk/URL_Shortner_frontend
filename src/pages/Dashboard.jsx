@@ -78,14 +78,14 @@ const Dashboard = () => {
 
       <ul>
         {shortUrls.map((url) => {
-          const shortLink = `http://localhost:8080/${url.shortCode}`;
+          const shortLink = `https://url-shortner-pj51.onrender.com/${url.shortCode}`;
 
           return (
             <li key={url.id}>
               {url.originalUrl} →
 
               <a
-                href={`http://localhost:8080/api/v1/url/shortCode/${url.shortCode}`}
+                href={`https://url-shortner-pj51.onrender.com/api/v1/url/shortCode/${url.shortCode}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
